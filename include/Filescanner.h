@@ -1,7 +1,6 @@
 #include<iostream>
 #include<fstream>
 #include<string>
-
 using namespace std;
 #ifndef FILESCANNER_H
 #define FILESCANNER_H
@@ -9,6 +8,6 @@ using namespace std;
 class Filescanner
 {
     public:
-    void scanfiles(string &s);
+    void scanfiles(string s[],int size);
 };
 #endif 
