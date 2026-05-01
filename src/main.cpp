@@ -15,10 +15,10 @@ int main()
     vector <string> file_name;
     string s;
     string store[3];
+
     Filescanner f1;
     Tokenizer t1;
     Indexer i1;
-    unordered_map<string, set<string>> m;
     
     for(int i=0;i<3;i++)
     {
