@@ -2,3 +2,4 @@ hi how are you
 i am fine and leaning c++
 what about you?
 nothing just building stuff with c++
+This whole sentence is common in all files
