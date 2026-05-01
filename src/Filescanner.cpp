@@ -5,21 +5,23 @@
 #include "Filescanner.h"
 #include "Tokenizer.h"
 using namespace std;
-void Filescanner :: scanfiles(string s[],int size)
+vector <string> v;
+string Filescanner :: scanfiles(string s[],int itr)
 {
-    vector <string> v;
+    
     v.push_back("C:/Users/Admin/OneDrive/Desktop/FileSearchEngine/data/data.txt");
     v.push_back("C:/Users/Admin/OneDrive/Desktop/FileSearchEngine/data/data1.txt");
-    for (int i=0;i<2;i++)
-    {
-        ifstream in (v[i]);
+    v.push_back("C:/Users/Admin/OneDrive/Desktop/FileSearchEngine/data/data2.txt");
+        ifstream in (v[itr]);
             string add;
             while(getline(in,add))
             {
-                s[i]+=add;
-                s[i]+=' ';
+                s[itr]+=add;
+                s[itr]+=' ';
             }
             
         in.close();
-    }
+        return v[itr];
+    
+   
 };

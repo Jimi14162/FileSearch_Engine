@@ -8,7 +8,8 @@ class Tokenizer
 {
     public:
     void read(string s[],int size);
-    void print(int size);
+    vector <string> get_tokens(int i);
+    
 
 };
 

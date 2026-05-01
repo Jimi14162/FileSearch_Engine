@@ -9,10 +9,9 @@ struct files
 {
     vector <string> v;
 };
-struct files no[2];
+struct files no[3];
 void Tokenizer :: read(string s[],int size)
 {
-    
     string str;
     for(int i=0;i<size;i++)
     {
@@ -30,18 +29,12 @@ void Tokenizer :: read(string s[],int size)
         }
     }
 }
-void Tokenizer :: print(int size)
+vector <string> Tokenizer :: get_tokens (int i)
 {
-    for(int j=0;j<size;j++)
-    {
-        cout<<"Files"<<j+1<<" ";
-        for(int i=0;i<no[j].v.size();i++)
-        {
-            cout<<no[j].v[i]<<"  ";
-        }
-        cout<<endl;
+    
+    return no[i].v;
 
-    }
 }
+
 
  

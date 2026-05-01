@@ -8,6 +8,6 @@ using namespace std;
 class Filescanner
 {
     public:
-    void scanfiles(string s[],int size);
+    string scanfiles(string s[],int size);
 };
 #endif 
