@@ -1,1 +1,2 @@
 hi i am learning c++
+This whole sentence is common in all files
