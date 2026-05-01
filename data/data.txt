@@ -1,4 +1,4 @@
 hi how are you
-i am fine c++
+i am fine and leaning c++
 what about you?
 nothing just building stuff with c++
