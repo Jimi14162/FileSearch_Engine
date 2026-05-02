@@ -1,2 +1,3 @@
-hi i am learnings c++
-This whole sentence is common in all files
+Java and C# are popular languages.
+C++ is used in game development.
+Game engines often use C++ for performance.
