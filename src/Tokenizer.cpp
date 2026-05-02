@@ -1,5 +1,4 @@
 #include<iostream>
-#include<fstream>
 #include<string>
 #include<cctype>
 #include<vector>
@@ -23,7 +22,7 @@ void Tokenizer :: read(string s[],int size)
                 no[i].v.push_back(str);
                 str.clear();
             }
-            else if(ispunct(ch) && (ch=='+' || ch=='#' || ch== '-' || ch=='_'))
+            else if(ispunct(ch) && (ch=='+' || ch=='#' ||ch== '-' || ch=='_'))
             {
                 str+=ch;
             }
@@ -32,7 +31,7 @@ void Tokenizer :: read(string s[],int size)
             else
                 continue;
             
-        }
+        } 
 
     }
 }
