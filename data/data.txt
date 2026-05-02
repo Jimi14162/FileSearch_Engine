@@ -1,5 +1,5 @@
-hi how are you
-i am fine and leaning c++
-what about you?
+hi how are YOure
+i am fine and learning C++
+what about YOu?
 nothing just building stuff with c++
 This whole sentence is common in all files

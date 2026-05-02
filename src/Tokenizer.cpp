@@ -15,18 +15,25 @@ void Tokenizer :: read(string s[],int size)
     string str;
     for(int i=0;i<size;i++)
     {
-        int a=s[i].length();
         for(char ch : s[i])
         {
-            if(ch==' ') 
+            ch=tolower(ch);
+            if(isspace(ch)) 
             {
                 no[i].v.push_back(str);
                 str.clear();
             }
-            else
+            else if(ispunct(ch) && (ch=='+' || ch=='#' || ch== '-' || ch=='_'))
+            {
                 str+=ch;
+            }
+            else if(isalnum(ch))
+                str+=ch;
+            else
+                continue;
             
         }
+
     }
 }
 vector <string> Tokenizer :: get_tokens (int i)

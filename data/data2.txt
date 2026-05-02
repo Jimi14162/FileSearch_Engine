@@ -1,2 +1,2 @@
-hi i am learning c++
+hi i am learnings c++
 This whole sentence is common in all files

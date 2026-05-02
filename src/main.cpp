@@ -4,14 +4,16 @@
 #include <string>
 #include <unordered_map>
 #include<set>
+#include<cctype>
+
 #include "Tokenizer.h"
 #include "Filescanner.h"
 #include "Indexer.h"
+
 using namespace std;
 
 int main()
 {
-    set<string> name;
     vector <string> file_name;
     string s;
     string store[3];
@@ -33,22 +35,29 @@ int main()
         vector <string> words=t1.get_tokens(i);
         i1.index_find(words,file_name[i]);
     }
-    
    
     cout << "Enter Finding Word : ";
     getline(cin, s);
 
-    auto result = i1.search(s);
+    string lower;
+
+    for(auto ch: s)
+    {
+        lower+=tolower(ch);
+    }
+    auto result = i1.search(lower);
     if(result.empty())
     {
-            cout<<"Word not found\n";
+            cout<<"Word not exist\n";
     }
     else
     {
+        cout<<"Word found in : \n";
         for(auto &x : result)
         {
-            cout<<x<<endl;
+            cout<<"- "<<x.substr(x.find_last_of("/")+1)<<endl;
         }
     }
+
     return 0;
 }
