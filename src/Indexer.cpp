@@ -2,7 +2,6 @@
 #include<string>
 #include<vector>
 #include<Indexer.h>
-#include<set>
 #include<unordered_map>
 using namespace std;
 void Indexer :: index_find(vector<string>&words,string &str)
