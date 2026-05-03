@@ -55,7 +55,8 @@ int main()
         cout<<"Word found in : \n";
         for(auto &x : result)
         {
-            cout<<"- "<<x.substr(x.find_last_of("/")+1)<<endl;
+            string str=x.first;
+            cout<<str.substr(str.find_last_of('/')+1)<<"("<<x.second<<" times )"<<endl;
         }
     }
 

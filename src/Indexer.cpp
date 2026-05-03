@@ -4,15 +4,16 @@
 #include<Indexer.h>
 #include<unordered_map>
 using namespace std;
-void Indexer :: index_find(vector<string>&words,string &str)
+void Indexer :: index_find(vector<string>&words,string &file_name)
 {
+    
     for(auto &w : words)
     {
-        m[w].insert(str);
+        m[w][file_name]++;;
     }
       
 }
-set <string> Indexer :: search(string &word)
+unordered_map <string,int> Indexer :: search(string &word)
 {
     if(m.find(word)!= m.end())
     {

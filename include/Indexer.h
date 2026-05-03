@@ -8,9 +8,9 @@
 using namespace std;
 class Indexer
 {
-    unordered_map<string,set<string>> m;
+    unordered_map<string,unordered_map<string,int>> m;
     public:
     void index_find(vector <string> & words,string &Filename);
-    set <string> search(string &word);
+    unordered_map <string,int> search(string &word);
 };
 #endif
