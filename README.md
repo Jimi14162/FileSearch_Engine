@@ -1,121 +1,110 @@
-# 🚀 File Search Engine (C++)
 
-## 🚧 Project Status: In Development
+📂 File Search Engine (C++)
 
-This project is currently under active development. Core modules like **file reading and tokenization are being implemented**, while indexing and search features are planned next.
+🚀 Project Status: In Progress (Day 5)
+This project is a basic file search engine built in C++ that indexes text files and allows fast searching of words across multiple files.
 
----
+🎯 What This Project Does
+Reads multiple text files
+Breaks content into words (tokenization)
+Builds an index for fast lookup
+Allows user to search for words
+Shows which files contain the word
+Also shows how many times the word appears in each file
 
-## 📌 Overview
+🧠 Core Concept
+Instead of scanning files every time, the program builds an index:
+Plain text
+word → file → count
+Example:
+Plain text
+c++ → file1.txt (3), file2.txt (1)
+This makes searching fast and efficient.
 
-This project aims to build a **high-performance file search engine in C++** that allows users to quickly search for files and their contents using keywords.
+⚙️ Features Implemented
+✅ File Handling
+Reads multiple files
+Supports custom file paths
+✅ Tokenization
+Splits text into words
+Handles spaces and formatting
+✅ Normalization
+Case-insensitive search (C++ == c++)
+Removes unwanted punctuation
+Preserves meaningful symbols like +
+✅ Indexing
+Uses unordered_map for fast lookup
+Stores frequency of words per file
+✅ Search
+User can input a word
+Instantly returns matching files
+Displays count of occurrences
+✅ Clean Output
+Displays only file names (not full paths)
+Structured and readable results
 
-Instead of scanning files repeatedly, the system will build an **index** to enable fast lookups.
-
----
-
-## 🎯 Planned Features
-
-* 📂 Scan files from directories *(in progress)*
-* 🔍 Keyword-based search *(planned)*
-* ⚡ Fast search using indexing *(planned)*
-* 🧠 Tokenization and text processing *(in progress)*
-* 💾 Index persistence *(planned)*
-* 🖥️ Command-line interface (CLI) *(in progress)*
-
----
-
-## 🧭 Development Roadmap
-
-### Phase 1 (Current)
-
-* File reading
-* Basic CLI setup
-* Tokenization (text → words)
-
-### Phase 2
-
-* Build inverted index
-* Store word → file mappings
-
-### Phase 3
-
-* Implement search functionality
-* Display matching results
-
-### Phase 4
-
-* Add ranking (better search results)
-* Optimize performance
-
-### Phase 5 (Advanced)
-
-* Multithreading for faster indexing
-
----
-
-## 🧠 How It Will Work (Design)
-
-1. **File Scanning** → Collect file paths
-2. **Tokenization** → Break content into words
-3. **Indexing** → Map words to files
-4. **Search** → Fast lookup using index
-
-Example (planned):
-
-```
-"data" → [file1.txt, file2.txt]
-"c++" → [file3.txt]
-```
-
----
-
-## 🏗️ Project Structure (Planned)
-
-```
-FileSearchEngine/
+🏗️ Project Structure
+Plain text
+project/
 │
-├── src/
-├── include/
-├── data/
-```
+├── main.cpp
+├── FileScanner.h / .cpp
+├── Tokenizer.h / .cpp
+├── Indexer.h / .cpp
+│
+└── sample_files/
+    ├── file1.txt
+    ├── file2.txt
+    └── file3.txt
 
-(Current structure may evolve as development progresses.)
+🔧 Technologies Used
+C++
+STL:
+unordered_map
+map
+vector
+string
 
----
+⚡ How It Works
+Files are read
+Text is tokenized into words
+Words are normalized (case + punctuation)
+Index is built:
+Plain text
+word → file → count
+User searches for a word
+Results are displayed instantly
 
-## ⚙️ Technologies Used
+📌 Example Output
+Plain text
+Enter word: c++
 
-* C++
-* STL (vector, unordered_map, set)
-* File handling (fstream)
-* Object-Oriented Programming
+Word found in:
+- file1.txt (3 times)
+- file2.txt (1 time)
 
----
+🚧 Upcoming Features
+🔹 Sorting results by frequency
+🔹 Multi-word search (AND / OR)
+🔹 Stop word removal
+🔹 Multithreading for faster indexing
+🔹 Folder-based file scanning
 
-## 🚀 How to Run (Work in Progress)
+📈 Learning Outcomes
+Data Structures (map, unordered_map, set, vector)
+File handling in C++
+Text processing
+Algorithm optimization
+Project structuring and modular design
 
-Instructions will be updated once core features are implemented.
+🏁 Current Progress
+Plain text
+Day 1–3 → Core engine (reading + indexing)
+Day 4   → Normalization + clean search
+Day 5   → Frequency-based indexing (current)
 
----
-
-## 📈 Goal of This Project
-
-The goal is to build a system that demonstrates:
-
-* Efficient data retrieval using indexing
-* Clean modular design in C++
-* Real-world problem solving
-* Performance optimization
-
----
-
-## 📌 Author
-
-Jimi Patel
-
----
-
-## ⭐ Note
-
-This repository is being actively developed. Features and structure will evolve as the project progresses.
+🤝 Future Goal
+Transform this into a mini search engine with:
+ranking
+performance optimization
+scalable design
