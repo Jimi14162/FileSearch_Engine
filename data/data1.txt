@@ -1,3 +1,3 @@
 Python is easy to learn.
 C++ is faster than Python.
-Many developers use Python and C++.
+Many developers use Python and.

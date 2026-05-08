@@ -12,5 +12,6 @@ class Indexer
     public:
     void index_find(vector <string> & words,string &Filename);
     unordered_map <string,int> search(string &word);
+    
 };
 #endif

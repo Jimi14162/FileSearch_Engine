@@ -9,11 +9,15 @@
 #include "Tokenizer.h"
 #include "Filescanner.h"
 #include "Indexer.h"
-
+#include<algorithm>
 using namespace std;
-
+bool compare(pair<string,int> a,pair<string,int> b) 
+{
+    return a.second>b.second;
+}
 int main()
 {
+    vector<pair<string,int>> vec ;
     vector <string> file_name;
     string s;
     string store[3];
@@ -45,15 +49,23 @@ int main()
     {
         lower+=tolower(ch);
     }
+
     auto result = i1.search(lower);
-    if(result.empty())
+    for(auto & x : result)
+    {
+        vec.push_back(x);
+    }
+
+    sort(vec.begin(),vec.end(),compare);
+
+    if(vec.empty())
     {
             cout<<"Word not exist\n";
     }
     else
     {
         cout<<"Word found in : \n";
-        for(auto &x : result)
+        for(auto &x : vec)
         {
             string str=x.first;
             cout<<str.substr(str.find_last_of('/')+1)<<"("<<x.second<<" times )"<<endl;
