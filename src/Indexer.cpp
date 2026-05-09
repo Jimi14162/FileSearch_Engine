@@ -15,11 +15,12 @@ void Indexer :: index_find(vector<string>&words,string &file_name)
     
       
 }
-unordered_map <string,int> Indexer :: search(string &word)
+unordered_map <string,int> Indexer :: search(vector <string >&word)
 {
-    if(m.find(word)!= m.end())
+    for(auto &w : word)
+    if(m.find(w)!= m.end())
     {
-        return m[word];
+        return m[w];
     }
     return {};
 }

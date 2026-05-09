@@ -19,6 +19,7 @@ int main()
 {
     vector<pair<string,int>> vec ;
     vector <string> file_name;
+    vector <string> finding;
     string s;
     string store[3];
 
@@ -44,13 +45,20 @@ int main()
     getline(cin, s);
 
     string lower;
+    int len;
 
     for(auto ch: s)
     {
         lower+=tolower(ch);
+        if(isspace(ch))
+        {
+            len=lower.length();
+            finding.push_back(lower);
+            lower.erase(0,len);
+        }
     }
-
-    auto result = i1.search(lower);
+    finding.push_back(lower);
+    auto result = i1.search(finding);
     for(auto & x : result)
     {
         vec.push_back(x);

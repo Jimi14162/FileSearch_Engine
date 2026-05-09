@@ -3,7 +3,6 @@
 #include<iostream>
 #include<string>
 #include<vector>
-#include<set>
 #include<unordered_map>
 using namespace std;
 class Indexer
@@ -11,7 +10,7 @@ class Indexer
     unordered_map<string,unordered_map<string,int>> m;
     public:
     void index_find(vector <string> & words,string &Filename);
-    unordered_map <string,int> search(string &word);
+    unordered_map <string,int> search(vector <string> &word);
     
 };
 #endif
