@@ -49,12 +49,16 @@ int main()
 
     for(auto ch: s)
     {
-        lower+=tolower(ch);
+        
         if(isspace(ch))
         {
             len=lower.length();
             finding.push_back(lower);
             lower.erase(0,len);
+        }
+        else
+        {
+            lower+=tolower(ch);
         }
     }
     finding.push_back(lower);
