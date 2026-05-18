@@ -9,7 +9,7 @@ struct files
     vector <string> v;
 };
 struct files no[3];
-void Tokenizer :: read(string s[],int size)
+void Tokenizer :: read(string *s,int size)
 {
     string str;
     for(int i=0;i<size;i++)

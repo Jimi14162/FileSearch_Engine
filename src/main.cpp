@@ -21,21 +21,22 @@ int main()
     vector <string> file_name;
     vector <string> finding;
     string s;
-    string store[3];
 
     Filescanner f1;
     Tokenizer t1;
     Indexer i1;
-    
-    for(int i=0;i<3;i++)
+    int no_files;
+    no_files=f1.get_path();
+    string store[no_files];
+    for(int i=0;i<no_files;i++)
     {
-        file_name.push_back(f1.scanfiles(store, i));
+        file_name.push_back(f1.scanfiles(store,i));
         
     }
-    t1.read(store, 3);
+    t1.read(store,no_files);
 
     
-    for(int i=0;i<3;i++)
+    for(int i=0;i<no_files;i++)
     {
         vector <string> words=t1.get_tokens(i);
         i1.index_find(words,file_name[i]);

@@ -2,23 +2,42 @@
 #include<fstream>
 #include<string>
 #include<vector>
+#include<filesystem>
 #include "Filescanner.h"
 #include "Tokenizer.h"
 using namespace std;
-vector <string> v;
+namespace fs = std :: filesystem;
+
+int Filescanner :: get_path()
+{
+    cout<<"Enter Full Path of folder : ";
+    getline(cin,folder_path);
+    int count=0;
+    for(auto &file : fs :: directory_iterator(folder_path))
+    {
+        if(file.path().extension() == ".txt")
+        {
+            count++;
+        }
+    }
+    return count;
+}
 string Filescanner :: scanfiles(string s[],int itr)
 {
-    
-    v.push_back("C:/Users/Admin/OneDrive/Desktop/FileSearchEngine/data/data.txt");
-    v.push_back("C:/Users/Admin/OneDrive/Desktop/FileSearchEngine/data/data1.txt");
-    v.push_back("C:/Users/Admin/OneDrive/Desktop/FileSearchEngine/data/data2.txt");
+    for(auto &file : fs :: directory_iterator(folder_path))
+    {
+        if(file.path().extension() == ".txt")
+        {
+            v.push_back(file.path().string());
+        }
+    }
         ifstream in (v[itr]);
-            string add;
-            while(getline(in,add))
-            {
-                s[itr]+=add;
-                s[itr]+=' ';
-            }
+        string add;
+        while(getline(in,add))
+        {
+            s[itr]+=add;
+            s[itr]+=' ';
+        }
             
         in.close();
         return v[itr];

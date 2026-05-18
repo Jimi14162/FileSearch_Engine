@@ -7,7 +7,7 @@ using namespace std;
 class Tokenizer
 {
     public:
-    void read(string s[],int size);
+    void read(string *s,int size);
     vector <string> get_tokens(int i);
     
 
