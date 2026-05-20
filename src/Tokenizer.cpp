@@ -4,13 +4,9 @@
 #include<vector>
 #include "Tokenizer.h"
 using namespace std;
-struct files
-{
-    vector <string> v;
-};
-struct files no[3];
 void Tokenizer :: read(string *s,int size)
 {
+    v1.resize(size);
     string str;
     for(int i=0;i<size;i++)
     {
@@ -19,7 +15,7 @@ void Tokenizer :: read(string *s,int size)
             ch=tolower(ch);
             if(isspace(ch)) 
             {
-                no[i].v.push_back(str);
+                v1[i].push_back(str);
                 str.clear();
             }
             else if(ispunct(ch) && (ch=='+' || ch=='#' ||ch== '-' || ch=='_'))
@@ -35,10 +31,11 @@ void Tokenizer :: read(string *s,int size)
 
     }
 }
+
 vector <string> Tokenizer :: get_tokens (int i)
 {
     
-    return no[i].v;
+    return v1[i];
 
 }
 

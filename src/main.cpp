@@ -28,6 +28,7 @@ int main()
     int no_files;
     no_files=f1.get_path();
     string store[no_files];
+    
     for(int i=0;i<no_files;i++)
     {
         file_name.push_back(f1.scanfiles(store,i));
@@ -81,7 +82,10 @@ int main()
         for(auto &x : vec)
         {
             string str=x.first;
-            cout<<str.substr(str.find_last_of('/')+1)<<"("<<x.second<<" times )"<<endl;
+            if(str.find_last_of('/') != str.npos)
+                cout<<str.substr(str.find_last_of('/')+1)<<" ("<<x.second<<" times )"<<endl;
+            else
+                cout<<str.substr(str.find_last_of('\\')+1)<<" ("<<x.second<<" times )"<<endl;
         }
     }
 
